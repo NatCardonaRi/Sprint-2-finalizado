@@ -1,0 +1,159 @@
+
+*target{
+    margin: auto;
+    padding: auto;
+    font-family: 'Space Grotesk',  Space Grotesk;
+    display: flex;
+}
+
+:root{
+    --bordermorado: hsl(249, 99%, 64%);
+    --letra:  hsl(278, 68%, 11%);
+    --red: hsl(0, 100%, 66%);
+    --White: hsl(0, 0%, 100%);
+    --bordergris: hsl(270, 3%, 87%); 
+    --letragris: hsl(279, 6%, 55%);
+    --confirm: hsl(278, 68%, 11%);
+}
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+.container_fondo{
+    display: flex;
+    align-content: left;
+    position: fixed;
+}
+
+.container_front{
+    display: flex;
+    width: 50px;
+    height: 50px;
+    position:relative;
+    top: 130px;
+    left: 150px; 
+}
+
+.números{
+    color: white;
+    letter-spacing: 3.2px;
+}
+
+.nombre{
+    color: white;
+    letter-spacing: 2px;
+}
+
+.fecha{
+    color: white;
+    letter-spacing: 1.5px;
+}
+
+.container_back{
+    padding-left: 220px;
+    display: flex;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    top: 300px;
+    left: 50px;
+}
+
+form{
+    width: 290px;
+    height: 270px;
+    font-size: 11px;
+}
+
+.casillasAnchas{
+    width: 285px;
+    margin-top: 7px;
+    margin-bottom: 20px;
+}
+
+.casillasPeques{
+    width: 60px;
+}
+
+.letraCVC{
+    color: var(--letra);
+    letter-spacing: 1px;
+    font-weight: bold;
+    margin-left: 80px;
+}
+.casCVC{
+    width: 100PX;
+    margin-left: 80px;
+    margin-top: 14px;
+}
+
+.casillas{
+    border-radius: 8px;
+    height: 45px;
+    border: 2px solid var(--bordergris);
+    color: var(--letragris);
+    padding-left: 10px;
+    
+}
+
+.casillas:focus{
+    outline: 2px solid var(--bordermorado);
+    color: var(--letra);
+}
+
+.letras{
+    color: var(--letra);
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.casillasPeques{
+    display: flex;
+    gap: 5px;
+}
+
+.primera{
+    display: flex;
+    margin-bottom: 30px;
+    gap: 15px;
+}
+
+button{
+    border-radius: 8px;
+    height: 35px;
+    color: white;
+    background-color: var(--confirm);
+    width: 285px;
+    letter-spacing: 1px;
+}
+
+button:hover{
+    background-color: var(--letragris);
+    cursor: pointer;
+    border:0px;
+}
+
+.all{
+    display: flex;
+    position: relative;
+    top: -60px;
+    left: 800px;
+}
+
+#container-thanks {
+    display: flex;
+    flex-direction: column;
+    position: relative;;
+    background-color: white;
+    width: 350px;
+    height: 350px;
+    border-radius: 15px;
+    margin: 200px auto;
+  }
+
+  #container-thanks img {
+    width: 150px;
+    margin-left: 60px;
+    margin-bottom: 30px;
+  }

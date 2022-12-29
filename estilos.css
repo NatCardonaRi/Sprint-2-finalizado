@@ -1,0 +1,100 @@
+/* falta importar fuente */
+
+
+*target{
+    margin: auto;
+    padding: auto;
+    font-family: 'Space Grotesk',  Space Grotesk;
+    display: flex;
+}
+
+.container_fondo{
+    display: flex;
+    align-content: left;
+    position: fixed;
+}
+
+.container_front{
+    display: flex;
+    width: 50px;
+    height: 50px;
+    position:relative;
+    top: 130px;
+    left: 150px; 
+}
+
+.números{
+    color: white;
+    letter-spacing: 3.2px;
+}
+
+.nombre{
+    color: white;
+    letter-spacing: 2px;
+}
+
+.fecha{
+    color: white;
+    letter-spacing: 1.5px;
+}
+
+.container_back{
+    padding-left: 220px;
+    display: flex;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    top: 300px;
+    left: 50px;
+}
+
+form{
+    width: 290px;
+    height: 270px;
+    font-size: 11px;
+}
+
+.casillasAnchas{
+    width: 285px;
+    margin-top: 7px;
+    margin-bottom: 20px;
+}
+
+.casillasPeques{
+    width: 60px;
+}
+
+.casCVC{
+    width: 145PX;
+}
+
+.casillas{
+    border-radius: 8px;
+    height: 45px;
+    border: 1px solid var(--bordergris);
+    color: var(--letragris);
+    padding-left: 10px;
+}
+
+.casillas:focus{
+    outline: 1px solid var(--bordermorado);
+    color: var(--letra);
+}
+
+.letras{
+    color: var(--letra);
+    letter-spacing: 1px;
+}
+
+.casillasPeques{
+    display: flex;
+    gap: 5px;
+}
+
+.primera{
+    display: flex;
+    margin-bottom: 30px;
+    gap: 15px;
+}
+
+button
