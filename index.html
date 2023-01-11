@@ -1,83 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=SpaceGrotesk">
-<style>
-body {
-  font-family: 'Space Grotesk';
-  font-size: 18px;
-}
-</style>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<body>
-    <body bgcolor="white"></body>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.cdnfonts.com/css/space-grotesk"
+      rel="stylesheet"
+    />
+  </head>
 
-    <div class="container_fondo">
-    <img src="bg-main-desktop.png" alt="imagen izquierda"/></div>
+  <body>
+    <main>
+      <div id="contendor_app">
+        <div class="container_fondo">
+          <img
+            id="fondo_morado"
+            src="bg-main-desktop.png"
+            alt="imagen izquierda"
+          />
 
-    <div class= "container_front">
-        <top>
-        <img src="bg-card-front.png" alt="frente_tarjeta" width="380" height="200"/>
+          <div class="container_front">
+            <img
+              src="bg-card-front.png"
+              alt="frente_tarjeta"
+              width="380"
+              height="200"
+            />
 
-        <SPAN style="position: absolute; top: 20px; left: 25px;width: 80px; height: 45px">
-            <img src="card-logo.svg" alt="logo"/>
-            </SPAN>
+            <span
+              style="
+                position: absolute;
+                top: 20px;
+                left: 25px;
+                width: 80px;
+                height: 45px;
+              "
+            >
+              <img src="card-logo.svg" alt="logo" />
+            </span>
 
-         <SPAN style="position: absolute; top: 100px; left: 3px;width: 350px; height: 220px">
-            <ul><h3 class="números">0000 0000 0000 0000</h3></ul>
-                </SPAN>
-            
-         <SPAN style="position: absolute; top: 140px; left: 3px;width: 300px; height: 200px">
-            <ul><h6 class="nombre">JANE APPLESEED</h6></ul>
-                 </SPAN>
+            <h3 class="números" id="targetNumbers">0000 0000 0000 0000</h3>
 
-        <SPAN style="position: absolute; top: 140px; left: 250px;width: 300px; height: 200px">
-            <ul><h5 class="fecha">00/00</h5></ul>
-                </SPAN>
-    
-    </top></div>
-        
-    <div class="container_back">
-    <img src="bg-card-back.png" alt="revés tarjeta"/>
+            <h6 class="nombre" id="targetName">JANE APPLESEED</h6>
 
-    <SPAN style="position: absolute; top: 65px; left: 470px;width: 300px; height: 200px">
-        <ul><h5 class="fecha">000</h5></ul>
-            </SPAN>
-  </div>
-  <div class="all">
-    <div class="main">
-        <form>
+            <h5 class="fecha" id="targetdate">
+              <span id="fechaMes">00</span>/<span id="fechaAnio">00</span>
+            </h5>
+          </div>
+        </div>
+        <div class="container_back">
+          <img src="bg-card-back.png" alt="revés tarjeta" />
 
+          <h5 class="codesecurity" id="secCode">000</h5>
+        </div>
+      </div>
+
+      <div class="all">
+        <form id="container-form">
+          <div class="nombreTarjeta">
             <label class="letras">CARDHOLDER NAME</label>
-                <input class="casillas casillasAnchas" type="text" placeholder="e.g. Jane Appleseed">
-            <label class="letras">CARD NUMBER</label>
-                 <input class="casillas casillasAnchas" placeholder="e.g. 1234 5678 9123 0000">
-           <div class="primera">
-            <div>
-            <label class="letras">EXP. DATE (MM/YY)</label>
-            <div class="casillasPeques">
-                <input class="casillas casillasPeques" type="number" placeholder="MM">
-                <input class="casillas casillasPeques" type="number" placeholder="YY">
+            <input
+              class="casillas casillasAnchas"
+              id="cardName"
+              type="text"
+              minlength="5"
+              placeholder="e.g. Jane Appleseed"
+              required
+            />
+          </div>
+
+          <div class="numeroTarjeta">
+            <label for="cardNumber" class="letras">CARD NUMBER</label>
+            <input
+              type="text"
+              class="casillas casillasAnchas"
+              id="cardNumber"
+              minlength="15"
+              maxlenght="19"
+              pattern="[0-9]{15,19}|(([0-9]{4}\s){3}[0-9]{3,4})"
+              placeholder="e.g. 1234 5678 9123 0000"
+              required
+            />
+          </div>
+
+          <div class="filaSeguridad">
+            <div class="primera">
+              <label class="letras">EXP. DATE (MM/YY)</label>
+
+              <div class="casilasMesAnio">
+                <div class="mes">
+                  <input
+                    class="casillas casillasPeques"
+                    id="month"
+                    type="number"
+                    minlength="2"
+                    maxlenght="2"
+                    min="1"
+                    max="12"
+                    placeholder="MM"
+                    required
+                  />
+                </div>
+                <div class="anio">
+                  <input
+                    class="casillas casillasPeques"
+                    id="year"
+                    type="number"
+                    minlength="2"
+                    maxlenght="2"
+                    placeholder="YY"
+                    min="22"
+                    required
+                  />
+                </div>
+              </div>
+              
             </div>
-        </div>
-        <div>
-            <label class="letraCVC">CVC</label>
-            <input class="casCVC casillas" type="number" placeholder="e.g. 165">
-        </div>
-    </div>
-            <button type="submit" onclick="captura()">Confirm</button>
-        </form>    
-    </div>
-    <section id="container-thanks">
-         </section>
-</main>
-</div>
+
+            <div class="cvc">
+              <label class="letraCVC">CVC</label>
+              <input
+                class="casillas"
+                id="cvc"
+                type="text"
+                minlength="3"
+                maxlenght="3"
+                pattern="[0-9]{3}"
+                placeholder="e.g. 165"
+                required
+              />
+            </div>
+          </div>
+          <div class="errores-seguridad">
+            <span class="error" id="errorMes">Mes invalido</span>
+            <span class="error" id="errorAnio">Año Invalido</span>
+            <span class="error" id="errorCVC">CVC invalido</span>
+          </div>
+
+          <button type="submit">Confirmar</button>
+        </form>
+
+        <section class="container-thanks" id="div-gracias">
+          <img
+            class="container-thanks-img"
+            src="icon-complete.svg"
+            alt="chulito"
+            width="100px"
+          />
+          <h1 class="container-thanks-title">Thank you!</h1>
+          <p class="container-thanks-text">We've added your card details</p>
+          <button class="container-thanks-button">Continue</button>
+        </section>
+      </div>
+    </main>
+
     <script src="main.js" type="text/javascript"></script>
-</body>
+  </body>
 </html>

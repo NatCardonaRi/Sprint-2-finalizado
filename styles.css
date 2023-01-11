@@ -1,159 +1,276 @@
-
-*target{
-    margin: auto;
-    padding: auto;
-    font-family: 'Space Grotesk',  Space Grotesk;
-    display: flex;
+body * {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Space Grotesk";
+  font-size: 18px;
 }
 
-:root{
-    --bordermorado: hsl(249, 99%, 64%);
-    --letra:  hsl(278, 68%, 11%);
-    --red: hsl(0, 100%, 66%);
-    --White: hsl(0, 0%, 100%);
-    --bordergris: hsl(270, 3%, 87%); 
-    --letragris: hsl(279, 6%, 55%);
-    --confirm: hsl(278, 68%, 11%);
-}
-body{
-    width: 100vw;
-    height: 100vh;
+*target {
+  margin: auto;
+  padding: auto;
+  font-family: "Space Grotesk", Space Grotesk;
+  display: flex;
+  box-sizing: border-box;
 }
 
-.container_fondo{
-    display: flex;
-    align-content: left;
-    position: fixed;
+:root {
+  --bordermorado: hsl(249, 99%, 64%);
+  --letra: hsl(278, 68%, 11%);
+  --red: hsl(0, 100%, 66%);
+  --White: hsl(0, 0%, 100%);
+  --bordergris: hsl(270, 3%, 87%);
+  --letragris: hsl(279, 6%, 55%);
+  --confirm: hsl(278, 68%, 11%);
 }
 
-.container_front{
-    display: flex;
-    width: 50px;
-    height: 50px;
-    position:relative;
-    top: 130px;
-    left: 150px; 
+body {
+  width: 100vw;
+  height: 100vh;
 }
 
-.números{
-    color: white;
-    letter-spacing: 3.2px;
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr; /* NEW */
 }
 
-.nombre{
-    color: white;
-    letter-spacing: 2px;
+#contendor_app {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  height: 100%;
 }
 
-.fecha{
-    color: white;
-    letter-spacing: 1.5px;
+.container_fondo {
+  display: flex;
+  align-content: left;
+  position: fixed;
 }
 
-.container_back{
-    padding-left: 220px;
-    display: flex;
-    position: relative;
-    width: 200px;
-    height: 200px;
-    top: 300px;
-    left: 50px;
+.container_front {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+
+  top: 100px;
+  left: 300px;
+
+  background: {
+    image: src= "bg-card-front.png";
+    repeat: no repeat;
+    size: contain;
+  }
 }
 
-form{
-    width: 290px;
-    height: 270px;
-    font-size: 11px;
+#targetNumbers {
+  position: absolute;
+  top: 100px;
+  left: 40px;
+  white-space: nowrap;
 }
 
-.casillasAnchas{
-    width: 285px;
-    margin-top: 7px;
-    margin-bottom: 20px;
+#targetdate {
+  position: absolute;
+  top: 140px;
+  left: 250px;
 }
 
-.casillasPeques{
-    width: 60px;
+#targetName {
+  position: absolute;
+  top: 135px;
+  left: 40px;
+  color: white;
+  letter-spacing: 2px;
+  width: 300px;
+  white-space: nowrap;
 }
 
-.letraCVC{
-    color: var(--letra);
-    letter-spacing: 1px;
-    font-weight: bold;
-    margin-left: 80px;
-}
-.casCVC{
-    width: 100PX;
-    margin-left: 80px;
-    margin-top: 14px;
+.números {
+  color: white;
+  letter-spacing: 3.2px;
 }
 
-.casillas{
-    border-radius: 8px;
-    height: 45px;
-    border: 2px solid var(--bordergris);
-    color: var(--letragris);
-    padding-left: 10px;
-    
+.fecha {
+  color: white;
+  letter-spacing: 1.5px;
 }
 
-.casillas:focus{
-    outline: 2px solid var(--bordermorado);
-    color: var(--letra);
+.container_back {
+  padding-left: 220px;
+  display: flex;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  top: 320px;
+  left: 50px;
 }
 
-.letras{
-    color: var(--letra);
-    letter-spacing: 1px;
-    font-weight: bold;
+#secCode {
+  position: relative;
+  left: -70px;
+  top: 65px;
 }
 
-.casillasPeques{
-    display: flex;
-    gap: 5px;
+.casillasAnchas {
+  width: 285px;
 }
 
-.primera{
-    display: flex;
-    margin-bottom: 30px;
-    gap: 15px;
+.casillasPeques {
+  width: 60px;
 }
 
-button{
-    border-radius: 8px;
-    height: 35px;
-    color: white;
-    background-color: var(--confirm);
-    width: 285px;
-    letter-spacing: 1px;
+.casillas {
+  border-radius: 8px;
+  height: 45px;
+  border: 2px solid var(--bordergris);
+  color: var(--letragris);
+  padding-left: 10px;
+
+  margin-top: 7px;
+  margin-bottom: 20px;
 }
 
-button:hover{
-    background-color: var(--letragris);
-    cursor: pointer;
-    border:0px;
+.casilasMesAnio {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
 }
 
-.all{
-    display: flex;
-    position: relative;
-    top: -60px;
-    left: 800px;
+.casillas:focus {
+  outline: 2px solid var(--bordermorado);
+  color: var(--letra);
 }
 
-#container-thanks {
+.letras {
+  color: var(--letra);
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+button {
+  border-radius: 8px;
+  height: 35px;
+  color: white;
+  background-color: var(--confirm);
+  width: 285px;
+  letter-spacing: 1px;
+}
+
+button:hover {
+  background-color: var(--letragris);
+  cursor: pointer;
+  border: 0px;
+}
+
+.all {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1600px) {
+  .all {
+    /* background-color: blue; */
+    align-items: end;
+    margin-right: 20vw;
+  }
+}
+
+form {
+  width: 290px;
+  height: 270px;
+  font-size: 11px;
+}
+
+.filaSeguridad {
+  display: grid;
+  grid-template-columns: 1fr 50%;
+}
+
+.primera {
+  display: flex;
+  flex-direction: column;
+}
+
+.cvc {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+}
+
+.letraCVC {
+  color: var(--letra);
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.error {
+  visibility: hidden;
+  color: red;
+}
+
+#div-gracias {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form.submitted input:invalid {
+  box-shadow: 0 0 5px 1px red;
+}
+
+form.submitted input:focus:invalid {
+  box-shadow: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+@media (max-width: 1200px) {
+  body {
+    /* background-color: burlywood; */
+  }
+
+  main {
     display: flex;
     flex-direction: column;
-    position: relative;;
-    background-color: white;
-    width: 350px;
-    height: 350px;
-    border-radius: 15px;
-    margin: 200px auto;
   }
 
-  #container-thanks img {
-    width: 150px;
-    margin-left: 60px;
-    margin-bottom: 30px;
+  #contendor_app {
+    width: 100%;
+    min-height: 50vh;
   }
+
+  .all {
+    margin-top: 100px;
+  }
+
+  .container_fondo #fondo_morado {
+    /* display: none; */
+    max-height: 250px;
+    width: 100%;
+    position: fixed;
+  }
+}
+.error{
+margin-right: 10px; 
+}
+.errores-seguridad{
+  padding-bottom: 10px;
+  
+}
